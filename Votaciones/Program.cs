@@ -1,4 +1,6 @@
-﻿internal class Program
+﻿using System.Runtime.InteropServices;
+
+internal class Program
 {
 	public static int[] votos = new int[100];
 	public static int[] votos_candidatos = new int[5];
@@ -60,12 +62,26 @@
 		}
 	}
 
+	public static void buscar_empate()
+	{
+		int empate = 0;
+		int j = 0;
+
+		for (int i = 1; i < 5; i++)
+		{
+			if (votos_candidatos[j] == votos_candidatos[i])
+				empate++;
+		}	
+		Console.WriteLine($"Hay {empate} empate(s).");
+	}
+
 	public static void Main(string[] args)
 	{
 		generar_votos();
 		Console.WriteLine("-------------------------------------");
-		contar_votos();		
+		contar_votos();
 		candidato_ganador();
 		porcentaje_de_votos();
+		buscar_empate();
 	}
 }
