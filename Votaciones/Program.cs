@@ -8,7 +8,7 @@
 		Random random = new Random();
 
 		for(int i = 0; i < 100; i++) 
-			votos[i] = random.Next(1, 5);
+			votos[i] = random.Next(0, 5);
 	}
 
 	public static void contar_votos()
