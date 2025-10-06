@@ -70,9 +70,11 @@ internal class Program
 		for (int i = 1; i < 5; i++)
 		{
 			if (votos_candidatos[j] == votos_candidatos[i])
+				Console.WriteLine($"Hay un empate entre los candidatos {j+1} y {i+1}.");
 				empate++;
-		}	
-		Console.WriteLine($"Hay {empate} empate(s).");
+				
+		}
+		Console.WriteLine($"En total, hay {empate} empate(s).");
 	}
 
 	public static void Main(string[] args)
