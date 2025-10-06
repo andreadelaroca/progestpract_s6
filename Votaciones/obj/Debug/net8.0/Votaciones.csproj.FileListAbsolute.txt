@@ -1,0 +1,15 @@
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/obj/Debug/net8.0/Votaciones.GeneratedMSBuildEditorConfig.editorconfig
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/obj/Debug/net8.0/Votaciones.AssemblyInfoInputs.cache
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/obj/Debug/net8.0/Votaciones.AssemblyInfo.cs
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/obj/Debug/net8.0/Votaciones.csproj.CoreCompileInputs.cache
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/obj/Debug/net8.0/Votaciones.sourcelink.json
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/bin/Debug/net8.0/Votaciones
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/bin/Debug/net8.0/Votaciones.deps.json
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/bin/Debug/net8.0/Votaciones.runtimeconfig.json
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/bin/Debug/net8.0/Votaciones.dll
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/bin/Debug/net8.0/Votaciones.pdb
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/obj/Debug/net8.0/Votaciones.dll
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/obj/Debug/net8.0/refint/Votaciones.dll
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/obj/Debug/net8.0/Votaciones.pdb
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/obj/Debug/net8.0/Votaciones.genruntimeconfig.cache
+/home/carmen/Git/cloned/progestpract_s6/Votaciones/obj/Debug/net8.0/ref/Votaciones.dll
