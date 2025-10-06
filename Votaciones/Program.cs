@@ -5,6 +5,8 @@ internal class Program
 	public static int[] votos = new int[100];
 	public static int[] votos_candidatos = new int[5];
 
+	private static string NombreCandidato(int i) => $"Candidato N°{i + 1}";
+
 	public static void generar_votos()
 	{
 		Random random = new Random();
@@ -25,22 +27,49 @@ internal class Program
 
 		for(int i = 0; i < 5; i++)
 		{
-			Console.WriteLine($"Candidato N°{i+1}: {votos_candidatos[i]}");
+			Console.WriteLine($"{NombreCandidato(i)}: {votos_candidatos[i]}");
 		}
 	}
 
 	public static void candidato_ganador()
 	{
-		int ganador = 1;
-
-		for(int i = 1; i < 5; i++)
+		// Encontrar el máximo de votos
+		int max = votos_candidatos[0];
+		for (int i = 1; i < 5; i++)
 		{
-			if(votos_candidatos[ganador] < votos_candidatos[i])
-				ganador = i;
+			if (votos_candidatos[i] > max)
+				max = votos_candidatos[i];
+		}
+
+		// Buscar y comparar candidatos con votos máximos
+		int[] ganadores = new int[5];
+		int cantGanadores = 0;
+		for (int i = 0; i < 5; i++)
+		{
+			if (votos_candidatos[i] == max)
+			{
+				ganadores[cantGanadores] = i;
+				cantGanadores++;
+			}
 		}
 
 		Console.WriteLine("-------------------------------------");
-		Console.WriteLine($"El ganador de la votación es el candidato N°{ganador+1}");
+		if (cantGanadores == 1)
+		{
+			Console.WriteLine($"El ganador es el {NombreCandidato(ganadores[0])} con {max} votos.");
+		}
+		else
+		{
+			string listado = "";
+			for (int i = 0; i < cantGanadores; i++)
+			{
+				string nombre = NombreCandidato(ganadores[i]);
+				if (i == 0) listado = nombre;
+				else if (i == cantGanadores - 1) listado += " y " + nombre;
+				else listado += ", " + nombre;
+			}
+			Console.WriteLine("Empate entre los ganadores: " + listado + $" con {max} votos cada uno.");
+		}
 		Console.WriteLine("-------------------------------------");
 	}
 
@@ -50,7 +79,7 @@ internal class Program
 
 		for(int i = 0; i < 5; i++)
 		{
-			// Calcular el porcentaje es inútil jaja, la cantidad de votos de por si es 100
+			// Calcular el porcentaje en el ejercicio es inútil si la cantidad de votos es 100
 			porcentajes[i] = (int)(((double)votos_candidatos[i] / 100) * 100);
 		}
 
@@ -58,23 +87,33 @@ internal class Program
 		Console.WriteLine("-------------------------------------");
 		for(int i = 0; i < 5; i++)
 		{
-			Console.WriteLine($"Candidato N°{i+1}: {porcentajes[i]}%");
+			Console.WriteLine($"{NombreCandidato(i)}: {porcentajes[i]}%");
 		}
 	}
 
 	public static void buscar_empate()
 	{
-		int empate = 0;
-		int j = 0;
+		int empates = 0;
 
-		for (int i = 1; i < 5; i++)
+		for (int i = 0; i < 5; i++)
 		{
-			if (votos_candidatos[j] == votos_candidatos[i])
-				Console.WriteLine($"Hay un empate entre los candidatos {j+1} y {i+1}.");
-				empate++;
-				
+			for (int j = i + 1; j < 5; j++)
+			{
+				if (votos_candidatos[i] == votos_candidatos[j])
+				{
+					Console.WriteLine($"Hay un empate entre {NombreCandidato(i)} y {NombreCandidato(j)}.");
+					empates++;
+				}
+			}
 		}
-		Console.WriteLine($"En total, hay {empate} empate(s).");
+		if (empates == 0)
+		{
+			Console.WriteLine("No hay empates.");
+		}
+		else
+		{
+			Console.WriteLine($"En total, hay {empates} empate(s).");
+		}
 	}
 
 	public static void Main(string[] args)
